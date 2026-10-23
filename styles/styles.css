@@ -1,0 +1,203 @@
+/* 1. Tipografías y paleta */
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --color-primary: #17151B;
+    --color-secondary: #302B35;
+    --color-accent: #D74B60;
+    --color-highlight: #F1C7C9;
+    --color-background: #100F13;
+    --color-surface: #211E25;
+    --color-text: #F6F1F0;
+    --color-muted: #C7BEC5;
+    --color-border: #49414C;
+    --content-width: 1100px;
+}
+
+/* 2. Base general */
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    background: radial-gradient(circle at top right, rgba(215, 75, 96, 0.12), transparent 32rem), var(--color-background);
+    color: var(--color-text);
+    font-family: 'Abel', sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.7;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+
+a {
+    color: var(--color-highlight);
+    text-underline-offset: 0.2em;
+    transition: color 180ms ease;
+}
+
+a:hover, a:focus-visible { color: #FFFFFF; }
+
+a:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 4px;
+}
+
+p { color: var(--color-muted); font-size: clamp(1.1rem, 2vw, 1.3rem); }
+ul { padding-left: 1.4rem; }
+
+/* 3. Encabezado y navegación */
+.site-header {
+    position: relative;
+    z-index: 1;
+    padding: 1.2rem clamp(1rem, 5vw, 4rem);
+    background: rgba(23, 21, 27, 0.96);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.site-brand {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    max-width: var(--content-width);
+    margin: 0 auto 0.8rem;
+}
+
+.site-brand strong {
+    color: var(--color-text);
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+.brand-tagline { color: var(--color-muted); font-size: 0.95rem; }
+
+.main-nav, .social-nav { max-width: var(--content-width); margin: 0 auto; }
+
+.main-nav ul, .social-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 1.3rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.main-nav a, .social-nav a {
+    display: inline-block;
+    padding: 0.35rem 0;
+    color: var(--color-text);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.main-nav a:hover, .main-nav a:focus-visible,
+.social-nav a:hover, .social-nav a:focus-visible { color: var(--color-accent); }
+
+/* 4. Contenido principal y títulos */
+.site-main {
+    width: min(calc(100% - 2rem), var(--content-width));
+    margin: 0 auto;
+    padding: clamp(2rem, 6vw, 5rem) 0;
+}
+
+.section-block { margin-bottom: clamp(2.5rem, 6vw, 5rem); }
+
+.hero {
+    padding: clamp(1.5rem, 5vw, 3.5rem);
+    background: linear-gradient(135deg, var(--color-surface), var(--color-primary));
+    border: 1px solid var(--color-border);
+    border-radius: 1.2rem;
+    box-shadow: 0 1.2rem 3rem rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    max-width: 18ch;
+    margin: 0 0 1rem;
+    color: var(--color-text);
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(2.2rem, 6vw, 4.4rem);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -0.04em;
+}
+
+.section-title {
+    margin: 0 0 1.2rem;
+    padding-left: 1rem;
+    border-left: 4px solid var(--color-accent);
+    color: var(--color-text);
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.featured-figure { margin: 2rem 0 0; }
+
+.featured-image {
+    width: 100%;
+    max-height: 34rem;
+    object-fit: cover;
+    border: 1px solid var(--color-border);
+    border-radius: 0.8rem;
+}
+.featured-image-tour {
+    width: 30%;
+    max-height: 34rem;
+    object-fit: cover;
+    border: 1px solid var(--color-border);
+    border-radius: 0.8rem;
+}
+
+.image-caption { margin-top: 0.65rem; color: var(--color-muted); font-size: 0.95rem; font-style: italic; }
+
+/* 5. Tarjetas, listas y clases reutilizables */
+.info-card, .content-card {
+    margin-top: 1.5rem;
+    padding: clamp(1.2rem, 3vw, 2rem);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 0.8rem;
+}
+
+.card-title, .content-card h2, .content-card h3 {
+    color: var(--color-highlight);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.card-title { margin-top: 0; }
+
+.highlight-list { display: grid; gap: 0.8rem; padding-left: 1.5rem; }
+.highlight-list li::marker { color: var(--color-accent); }
+
+.page-intro { margin-bottom: 2.5rem; }
+
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+.merch-image { width: 100%; border-radius: 0.8rem; border: 1px solid var(--color-border); }
+
+/* 6. Pie de página */
+.site-footer {
+    padding: 2rem clamp(1rem, 5vw, 4rem);
+    background: var(--color-primary);
+    border-top: 1px solid var(--color-border);
+    color: var(--color-muted);
+    text-align: center;
+}
+
+.site-footer > p { margin: 0 auto 1rem; font-size: 0.95rem; }
+.social-nav ul { justify-content: center; }
+
+
