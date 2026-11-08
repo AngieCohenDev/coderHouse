@@ -200,4 +200,98 @@ h1 {
 .site-footer > p { margin: 0 auto 1rem; font-size: 0.95rem; }
 .social-nav ul { justify-content: center; }
 
+/* ESTILOS EXCLUSIVOS PARA LA SECCIÓN INTEGRANTES */
 
+#integrantes .info-card {
+    display: grid;
+    grid-template-columns: 1fr 250px;
+    grid-template-areas:
+        "titulo imagen"
+        "texto imagen";
+    align-items: center;
+    column-gap: 2rem;
+}
+
+/* Título del integrante */
+#integrantes .card-title {
+    grid-area: titulo;
+    margin-bottom: 0.5rem;
+}
+
+/* Descripción */
+#integrantes .info-card p {
+    grid-area: texto;
+    margin: 0;
+    text-align: justify;
+}
+
+/* Figura e imagen */
+#integrantes .featured-figure {
+    grid-area: imagen;
+    width: 100%;
+    margin: 0;
+}
+
+#integrantes .featured-image-tour,
+#integrantes .featured-image-integrantes {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 0.8rem;
+    border: 1px solid var(--color-border);
+}
+
+/* Texto debajo de la imagen */
+#integrantes .image-caption {
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+/* GALERÍA DE MERCH - ESTILOS EXCLUSIVOS */
+
+#merch-camisas .merch-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+}
+
+/* Contenedor de cada imagen */
+#merch-camisas .featured-figure {
+    margin: 0;
+    padding: 1rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 0.8rem;
+}
+
+/* Imágenes */
+#merch-camisas .merch-image {
+    width: 100%;
+    height: 280px;
+    object-fit: contain;
+    border-radius: 0.5rem;
+}
+
+/* Precio */
+#merch-camisas .image-caption {
+    margin-top: 0.8rem;
+    text-align: center;
+    color: var(--color-highlight);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Tablets */
+@media (max-width: 900px) {
+    #merch-camisas .merch-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Celulares */
+@media (max-width: 550px) {
+    #merch-camisas .merch-gallery {
+        grid-template-columns: 1fr;
+    }
+}
