@@ -228,7 +228,28 @@ h1 {
     border-radius: 0.8rem;
 }
 
-.image-caption { margin-top: 0.65rem; color: var(--color-muted); font-size: 0.95rem; font-style: italic; }
+.image-caption {
+     margin-top: 0.65rem; color: var(--color-muted); font-size: 0.95rem; font-style: italic; 
+    }
+
+/* Carrusel*/
+
+#carouselExampleInterval {
+    width: 100%;
+    height: 600px;
+    margin: 0 auto;
+
+}
+
+#carouselExampleInterval .carousel-item {
+    height: 600px;
+}
+
+#carouselExampleInterval .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
 /* 5. Tarjetas, listas y clases reutilizables */
 .info-card, .content-card {
@@ -466,6 +487,14 @@ h1 {
     #integrantes .featured-figure {
         max-width: 300px;
         margin: 0 auto;
+    }
+     #carouselExampleInterval {
+        width: 100%;
+        height: 250px;
+    }
+
+    #carouselExampleInterval .carousel-item img {
+        height: 250px;
     }
 }
 
