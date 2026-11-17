@@ -47,7 +47,76 @@ p { color: var(--color-muted); font-size: clamp(1.1rem, 2vw, 1.3rem); }
 ul { padding-left: 1.4rem; }
 
 /* 3. Encabezado y navegación */
-.site-header {
+
+/* NAVBAR */
+.navbar {
+    background: var(--color-primary) !important;
+    color: var(--color-text);
+    font-family: 'Abel', sans-serif;
+    padding: 1rem 2rem;
+}
+
+/* Nombre o logo */
+.navbar .navbar-brand {
+    color: var(--color-highlight) !important;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+/* Enlaces */
+.navbar .nav-link {
+    color: var(--color-text) !important;
+    font-family: 'Abel', sans-serif;
+    font-size: 1.2rem;
+    transition: color 180ms ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: var(--color-accent) !important;
+}
+
+/* Menú desplegable */
+.navbar .menu,
+.navbar .drawer {
+    background: var(--color-surface) !important;
+    color: var(--color-text);
+    font-family: 'Abel', sans-serif;
+}
+
+.navbar .menu-item {
+    color: var(--color-text);
+    font-size: 1.1rem;
+    text-decoration: none;
+}
+
+.navbar .menu-item:hover {
+    background: var(--color-secondary);
+    color: var(--color-accent);
+}
+
+/* Drawer móvil */
+.navbar .drawer-title {
+    color: var(--color-highlight);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar .drawer-header {
+    border-bottom: 1px solid var(--color-border);
+}
+
+.navbar .btn-close {
+     color: var(--color-accent);
+
+}
+
+/* Icono del botón responsive */
+
+.navbar .btn-icon {
+    color: var(--color-accent);
+
+}.site-header {
     position: relative;
     z-index: 1;
     padding: 1.2rem clamp(1rem, 5vw, 4rem);
@@ -72,11 +141,15 @@ ul { padding-left: 1.4rem; }
     letter-spacing: 0.08em;
 }
 
-.brand-tagline { color: var(--color-muted); font-size: 0.95rem; }
+.brand-tagline { 
+    color: var(--color-muted); font-size: 0.95rem; 
+ }
 
-.main-nav, .social-nav { max-width: var(--content-width); margin: 0 auto; }
+.social-nav { 
+    max-width: var(--content-width); margin: 0 auto; 
+}
 
-.main-nav ul, .social-nav ul {
+.social-nav ul {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -86,7 +159,7 @@ ul { padding-left: 1.4rem; }
     list-style: none;
 }
 
-.main-nav a, .social-nav a {
+.social-nav a {
     display: inline-block;
     padding: 0.35rem 0;
     color: var(--color-text);
@@ -96,7 +169,6 @@ ul { padding-left: 1.4rem; }
     text-decoration: none;
 }
 
-.main-nav a:hover, .main-nav a:focus-visible,
 .social-nav a:hover, .social-nav a:focus-visible { color: var(--color-accent); }
 
 /* 4. Contenido principal y títulos */
@@ -115,6 +187,7 @@ ul { padding-left: 1.4rem; }
     border-radius: 1.2rem;
     box-shadow: 0 1.2rem 3rem rgba(0, 0, 0, 0.2);
 }
+
 
 h1 {
     max-width: 18ch;
@@ -235,7 +308,7 @@ h1 {
 #integrantes .featured-image-tour,
 #integrantes .featured-image-integrantes {
     width: 100%;
-    height: 250px;
+    height: 25%;
     object-fit: cover;
     border-radius: 0.8rem;
     border: 1px solid var(--color-border);
@@ -282,17 +355,103 @@ h1 {
     font-weight: 600;
 }
 
-/* Tablets */
-@media (max-width: 900px) {
-    #merch-camisas .merch-gallery {
-        grid-template-columns: repeat(2, 1fr);
-    }
-  
+
+
+/* FORMULARIO DE CONTACTO */
+
+#contacto {
+    width: min(calc(100% - 1rem), 1670px);
+    margin: 0 auto 3rem;
 }
 
-/* Celulares */
-@media (max-width: 550px) {
-    #merch-camisas .merch-gallery {
+#contacto .contact-intro {
+    color: var(--color-muted);
+    margin-bottom: 2rem;
+}
+
+#contacto .contact-form {
+    padding: 2rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+}
+
+#contacto .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+#contacto .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+#contacto .form-group label {
+    color: var(--color-highlight);
+    font-weight: 600;
+}
+
+#contacto .form-group input,
+#contacto .form-group textarea {
+    width: 100%;
+    padding: .9rem 1rem;
+    background: var(--color-primary);
+    border: 1px solid var(--color-border);
+    border-radius: .5rem;
+    color: var(--color-text);
+    font-family: 'Abel', sans-serif;
+    font-size: 1.1rem;
+}
+
+#contacto .form-group input:focus,
+#contacto .form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+}
+
+#contacto .message-group {
+    grid-column: 1 / -1;
+}
+
+#contacto .form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+#contacto .contact-button {
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: var(--color-accent);
+    border: none;
+    border-radius: .5rem;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#contacto .contact-button:hover {
+    background: #B9364C;
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        padding: 1rem;
+    }
+    #contacto .contact-form {
+        padding: 1.2rem;
+    }
+
+    #contacto .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #contacto .message-group {
+        grid-column: auto;
+    }
+     #merch-camisas .merch-gallery {
         grid-template-columns: 1fr;
     }
         #integrantes .info-card {
@@ -309,3 +468,13 @@ h1 {
         margin: 0 auto;
     }
 }
+
+/* Tablets */
+@media (max-width: 900px) {
+    #merch-camisas .merch-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+  
+}
+
+
